@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klaus.attractive.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.klaus.attractive.model.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="job" jdbcType="VARCHAR" property="job" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="account_time" jdbcType="TIMESTAMP" property="accountTime" />
+    <result column="account_id" jdbcType="INTEGER" property="accountId" />
+    <result column="body_id" jdbcType="INTEGER" property="bodyId" />
+  </resultMap>
+
+  <select id="findByName" parameterType="string" resultMap="BaseResultMap">
+    SELECT u.`id`,u.`name`,u.`sex`,u.`age`,u.`birthday`,u.`telephone`,u.`job`
+    ,u.`address`,u.`account_time`,u.`account_id`,u.`body_id`FROM user u
+    <if test="name !=null and name !=''">
+      WHERE u.name LIKE CONCAT("%",#{name},"%") ORDER BY u.id DESC
+    </if>
+  </select>
+</mapper>

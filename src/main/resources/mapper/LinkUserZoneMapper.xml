@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klaus.attractive.dao.LinkUserZoneMapper">
+  <resultMap id="BaseResultMap" type="com.klaus.attractive.model.LinkUserZone">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <id column="zone_id" jdbcType="INTEGER" property="zoneId" />
+  </resultMap>
+</mapper>
